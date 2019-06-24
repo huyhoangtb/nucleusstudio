@@ -53,6 +53,7 @@ class Index extends React.Component {
         </div>
 
         <Drawer
+          destroyOnClose
           title={`You are viewing ${currentUser.login}`}
           closable={true}
           width={500}

@@ -19,7 +19,6 @@ class Index extends React.Component {
   componentWillMount = async () => {
     const {username} = this.props
     const user = await Requester.get(`https://api.github.com/users/${username}`);
-    console.log('useruseruseruser, ', user);
     this.setState({user});
   }
 
