@@ -28,14 +28,17 @@ class Index extends React.Component {
     return (
       <div className="user-detail">
         <ul>
-          <DetailItem label='Username' info={`#${user.id} - ${user.login}`}/>
-          <li>
-            <div className="label">Avatar:</div>
+
+
+          <li className='short-detail'>
+            <div className="avatar"><Avatar width={30} src={user.avatar_url}/></div>
             <div className="detail">
-              <Avatar width={20} src={user.avatar_url}/>
+              <div><b>{user.name}</b></div>
+              <div className="desc">{user.location}</div>
             </div>
           </li>
-          <DetailItem label='name' info={`${user.name}`}/>
+
+          <DetailItem label='Username' info={`#${user.id} - ${user.login}`}/>
           <DetailItem label='location' info={`${user.location}`}/>
           <DetailItem label='company' info={`${user.company}`}/>
           <DetailItem label='blog Link' info={<a href={user.blog} target='_blank'/> }/>

@@ -9,11 +9,28 @@
       display: flex;
       border-bottom: 1px dotted var(--primary-color);
       padding: 10px 0;
+      align-items: center;
+
+      &:first-child {
+        border-bottom: none;
+      }
+
+      .avatar {
+        margin-right: 20px;
+      }
+
+      .detail {
+        grid-row: 1;
+      }
+
+      .desc {
+        color: #cccccc;
+      }
 
       .label {
         width: 120px;
         font-weight: bold;
-        color: #3d2d83;
+        //color: #3d2d83;
       }
 
       .detail {
