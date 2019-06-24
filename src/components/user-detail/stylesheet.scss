@@ -1,0 +1,24 @@
+.user-detail {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      border-bottom: 1px dotted var(--primary-color);
+      padding: 10px 0;
+
+      .label {
+        width: 120px;
+        font-weight: bold;
+        color: #3d2d83;
+      }
+
+      .detail {
+        grid-row: 1;
+      }
+    }
+  }
+}
