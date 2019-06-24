@@ -1,6 +1,6 @@
 import React from "react";
 import Requester from 'common/network/http/Request'
-import {Drawer} from 'antd';
+import {Drawer, Icon} from 'antd';
 import UserDetail from './user-detail';
 import './stylesheet.scss';
 
@@ -13,7 +13,6 @@ class Index extends React.Component {
 
   componentWillMount = async () => {
     const users = await Requester.get('https://api.github.com/users');
-    console.log(users);
     this.setState({users});
   }
 
@@ -35,13 +34,14 @@ class Index extends React.Component {
       <div className="ui-body">
         <div className="header">
           <div className="ui-content">
-            Top 5 Github's Users
+            Home
           </div>
         </div>
 
         <div className="ui-user-list">
           <div className="ui-content">
-            <h1 className="title"> Tab the username to see more information</h1>
+            <h1 className="title5user"> Top 5 Github's Users</h1>
+            <div className="title-guid">Tab the username to see more information</div>
             <ul className="user-panel">
               {
                 users.map((user, index) => (
@@ -54,9 +54,16 @@ class Index extends React.Component {
 
         <Drawer
           destroyOnClose
-          title={`You are viewing ${currentUser.login}`}
+          title={<div className='user-detail-control' onClick={this.changeStateOfUserDetailDrawer}>
+            <div className="back">
+              <Icon type="left"/> back
+            </div>
+            <div className="header-title">
+                Person
+            </div>
+          </div>}
           closable={true}
-          width={500}
+          width={'100%'}
           onClose={this.changeStateOfUserDetailDrawer}
           visible={this.state.showUserDetail}
         >
